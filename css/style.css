@@ -13,14 +13,14 @@ body {
 }
 
 a {
-	color: #49B2B4;
+	color: white;
 	text-decoration: none;
+	font-family: arial;
 }
  
 
 img {
-	max-width: 100%;
-	
+	max-width: 100%;	
 }
 
 h1, h2, h3 {
@@ -37,23 +37,12 @@ p {
 }
 
 .container {
-	max-width: 80%;
+	max-width: 1200px;
 	margin: 0 auto;
-	
 }
-
-.clear::after {
-	clear: both;
-	content: ".";
-	display: block;
-	height: 0;
-	line-height: 0;
-	visibility: hidden;
-}
-
-/* HEADER */
+ 
 header {
-		text-align: center;
+	text-align: center;
 }
 
 header nav {
@@ -62,7 +51,7 @@ header nav {
 }
 
 header a {
-	font-family: "PT Sans Narrow";
+	font-family: arial;
 	display: inline-block;
 	vertical-align: middle;
 	padding: 10px 15px;
@@ -71,26 +60,48 @@ header a {
 	width: 20%;
 }
 
- 
-/* SECTION */
-
-#background{
-	position: relative;
-	height:610px;
-	margin:0 auto
+.slider{
+width:1200px;
+height:602px;
+overflow:hidden;
+margin: 0 auto;
 }
-#background img{
-	 width: 100%;
-	 height: 100%;
-	 object-fit: cover;
-	 object-position: top center;
+
+
+.slides{
+width: calc(1200px * 3);
+animation:glisse 20s infinite;
+animation-direction: normal;
+}
+
+
+.slide{
+float: left
+}
+
+
+@keyframes glisse {
+0%{
+transform: translateX(0);
+}
+ 
+33%{
+transform: translateX(-1200px);
+}
+ 
+66%{
+transform: translateX(-2400px);
+}
+ 
+100%{
+transform: translateX(0);
+}
 }
 
 #button{
 	position: absolute;
-	top:60%;
+	top:65%;
 	left:40%;
-	margin:0 auto;
 	text-align:center;
 	color: white;
 	font-weight: bold;
@@ -102,12 +113,10 @@ header a {
 	background-color:rgba(192,192,192,0.3)
 }
 
- 
 section {
 	width: 100%;
 	display: inline-block;
 	vertical-align: top;
-	padding: 25px 25px 25px 0;
 }
 
 section img {
@@ -116,27 +125,28 @@ section img {
 
 .flex-container {
 	width:100%;
-  display: flex;
- flex-wrap: wrap;
-  justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
 }
 
 .flex-container > div {
-  background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+	background-color: #f1f1f1;
+	width: 100px;
+	margin: 10px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
 }
-	 
-	 
+	
+ 
+	
 #formulaire{
 	margin:0 auto;
-	 width:50%;
-	 display: flex;
-	 padding:20px;
-	 
+	width:50%;
+	display: flex;
+	padding:20px; 
 }
 
 .contact-gauche{
@@ -153,44 +163,61 @@ section img {
 	color: black;
 }
  
- 
+ #contact{
+	width:100px;
+	margin:0 auto;
+	text-align:center;
+	display: flex;
+	margin-top:1rem;
+}
 
 @media screen and (max-width:560px) {
+	h1, h2, h3 {
+	font-family: arial;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	background-color: black;
+	color: white;
+	padding: 5px 10px;
+}
 	header a {
-		width: 100%;
-		padding: 30px;
-	}
- 
- #background{
+	width: 100%;
+	padding: 30px;
+}
+	#background{
 	position: relative;
 	height:150px;
 	margin:0 auto
 }
-#background img{
-	 width: 100%;
-	 height: 100%;
-	 object-fit: cover;
-	 object-position: top center;
+	#background img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+}
+	.slider{
+	display: none;	
+}
+	
+	#button{
+	display: none;
+}
+	 
+	#formulaire{
+	margin:0 auto;
+	width:100%;
+	display: inline-block;
+	padding:20px;
 }
 
-#button{
-display: none
-}
-#formulaire{
-	margin:0 auto;
-	 width:100%;
-	display: inline-block;
-	 padding:20px;
-	 
-}
- .contact-gauche{
+	.contact-gauche{
 	display: inline-block;
 	font-size:14px;
 	font-family: arial, sans serif;
 	color: black
 }
 
-.contact-droite{
+	.contact-droite{
 	
 	font-size:14px;
 	font-family: arial, sans serif;
